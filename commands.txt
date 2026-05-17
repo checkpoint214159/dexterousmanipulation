@@ -1,0 +1,18 @@
+currently we mount the pwd into the docker image. this is so we can write code in host, then execute it in docker:
+
+docker run --gpus all --rm -it \
+  -v "$(pwd)":/workspace \
+  leap-hand
+
+Then go with
+cd src/LEAP_Hand_Sim/leapsim
+uv run python train.py wandb_activate=false num_envs=1 headless=true test=true task=LeapHandRot checkpoint=runs/pretrained/nn/LeapHand.pth \
+    task.env.record_video=true # if you want to try and record videos
+
+
+gnu debugger:
+uv run gdb -ex run -ex bt -ex quit --args \
+  python train.py \
+    wandb_activate=false num_envs=1 headless=true test=true \
+    task=LeapHandRot checkpoint=runs/pretrained/nn/LeapHand.pth \
+    task.env.record_video=true

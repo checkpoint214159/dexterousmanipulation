@@ -216,3 +216,10 @@ __marimo__/
 
 # Streamlit
 .streamlit/secrets.toml
+
+# IsaacGym — download from NVIDIA developer site, place at ./isaacgym/
+isaacgym/
+
+# RL training outputs
+*runs/
+*.pth

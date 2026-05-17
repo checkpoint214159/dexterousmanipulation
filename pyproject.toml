@@ -1,0 +1,24 @@
+[project]
+name = "dexterousmanipulation"
+version = "0.1.0"
+description = "Dexterous manipulation research — LEAP Hand + IsaacGym"
+readme = "README.md"
+requires-python = ">=3.8,<3.9"
+dependencies = [
+    "leapsim",
+    "rerun-sdk>=0.22.1",
+]
+
+[tool.uv.workspace]
+members = ["src/LEAP_Hand_Sim"]
+
+[tool.uv.sources]
+leapsim  = { workspace = true }
+isaacgym = { path = "isaacgym/python", editable = true }
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/dexmanip"]

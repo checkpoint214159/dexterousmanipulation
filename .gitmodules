@@ -1,0 +1,3 @@
+[submodule "src/LEAP_Hand_Sim"]
+	path = src/LEAP_Hand_Sim
+	url = https://github.com/checkpoint214159/LEAP_Hand_Sim.git
