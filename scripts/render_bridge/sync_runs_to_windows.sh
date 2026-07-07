@@ -20,7 +20,7 @@ SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 REPO_ROOT="$(cd "$SCRIPT_DIR/../.." && pwd)"
 
 SRC="${1:-$REPO_ROOT/src/LEAP_Hand_Sim/leapsim/runs}"
-DST="${2:-/mnt/c/Users/$USER/leapsim_runs}"
+DST="${2:-/mnt/e/odyssey/runs}"
 
 if ! command -v inotifywait >/dev/null 2>&1; then
   echo "error: inotifywait not found. Install with:  sudo apt install inotify-tools" >&2
